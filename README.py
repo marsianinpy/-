@@ -3,7 +3,6 @@ import time
 from random import *
 pygame.init()
 
-'''створюємо вікно програми'''
 back = (200, 255, 255)  
 mw = pygame.display.set_mode((500, 500))  
 mw.fill(back)
@@ -93,12 +92,12 @@ while True:
         if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1:
             x, y = event.pos
             for i in range(num_cards):
-                #шукаємо, в яку карту потрапив клік
+                
                 if cards[i].collidepoint(x,y):
-                    if i+1 == click: #якщо на карті є напис - перефарбовуємо в зелений плюс очко
+                    if i+1 == click:
                         cards[i].color(GREEN)
                         points += 1
-                    else: #інакше перефарбовуємо в червоний, мінус очко
+                    else: 
                         cards[i].color(RED)
                         points -= 1
                     cards[i].fill()
